@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Pixel Art Top Down - Basic
 
 1.1.2  
@@ -16,4 +17,24 @@ Pixel Art Top Down - Basic
     - Updated document
 
 1.0.0
+=======
+Pixel Art Top Down - Basic
+
+1.1.2  
+    - Some minor issues fixed.
+
+1.1.1  
+    - Some minor issues fixed.
+
+1.1.0  
+    - Drop support for built-in render pipeline.
+    - Add URP 2D Lit support.
+    - Some minor issues fixed.
+
+1.0.1
+    - Add Tags & Layers settings as preset
+    - Updated document
+
+1.0.0
+>>>>>>> 109ca3f109813cfbad91626c8691ac3c38ff62a4
     - First Release

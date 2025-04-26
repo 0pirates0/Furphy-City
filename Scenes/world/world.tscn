@@ -1,0 +1,117 @@
+[gd_scene load_steps=9 format=3 uid="uid://isw55t8u0chf"]
+
+[ext_resource type="Texture2D" uid="uid://dvajeddssqfch" path="res://Assets/Texture/TX Tileset Grass.png" id="1_u1ao7"]
+[ext_resource type="Texture2D" uid="uid://cxf40xe2wknjj" path="res://Assets/Texture/stars.png" id="2_uj6vv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s3h2w"]
+texture = ExtResource("1_u1ao7")
+0:8/size_in_atlas = Vector2i(2, 2)
+0:8/0 = 0
+0:0/size_in_atlas = Vector2i(6, 6)
+0:0/0 = 0
+8:2/size_in_atlas = Vector2i(2, 2)
+8:2/0 = 0
+8:0/size_in_atlas = Vector2i(2, 2)
+8:0/0 = 0
+12:0/size_in_atlas = Vector2i(2, 2)
+12:0/0 = 0
+12:2/size_in_atlas = Vector2i(3, 2)
+12:2/0 = 0
+10:6/size_in_atlas = Vector2i(2, 2)
+10:6/0 = 0
+8:6/size_in_atlas = Vector2i(2, 2)
+8:6/0 = 0
+8:5/0 = 0
+15:4/0 = 0
+14:6/size_in_atlas = Vector2i(2, 2)
+14:6/0 = 0
+12:4/size_in_atlas = Vector2i(2, 2)
+12:4/0 = 0
+15:1/0 = 0
+11:2/size_in_atlas = Vector2i(1, 2)
+11:2/0 = 0
+11:1/0 = 0
+10:4/size_in_atlas = Vector2i(2, 2)
+10:4/0 = 0
+12:7/0 = 0
+5:9/size_in_atlas = Vector2i(2, 2)
+5:9/0 = 0
+5:11/size_in_atlas = Vector2i(2, 2)
+5:11/0 = 0
+13:9/size_in_atlas = Vector2i(2, 2)
+13:9/0 = 0
+15:9/size_in_atlas = Vector2i(1, 2)
+15:9/0 = 0
+0:14/size_in_atlas = Vector2i(2, 2)
+0:14/0 = 0
+2:14/size_in_atlas = Vector2i(2, 2)
+2:14/0 = 0
+8:14/size_in_atlas = Vector2i(2, 2)
+8:14/0 = 0
+10:14/size_in_atlas = Vector2i(2, 2)
+10:14/0 = 0
+0:10/size_in_atlas = Vector2i(2, 2)
+0:10/0 = 0
+1:12/size_in_atlas = Vector2i(2, 2)
+1:12/0 = 0
+0:12/size_in_atlas = Vector2i(1, 2)
+0:12/0 = 0
+3:12/size_in_atlas = Vector2i(1, 2)
+3:12/0 = 0
+12:13/0 = 0
+5:13/0 = 0
+12:9/0 = 0
+3:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_04h7t"]
+sources/0 = SubResource("TileSetAtlasSource_s3h2w")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wsv5m"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_x27uy"]
+offsets = PackedFloat32Array(0.118943, 0.46696, 0.726872, 0.951542)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mmvcg"]
+gradient = SubResource("Gradient_x27uy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qsw82"]
+lifetime_randomness = 0.24
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(-5000, 3000, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 10.0
+scale_max = 20.0
+color_ramp = SubResource("GradientTexture1D_mmvcg")
+anim_speed_min = 0.45
+anim_speed_max = 0.45
+anim_offset_min = 1.0
+anim_offset_max = 1.0
+
+[node name="world" type="Node2D"]
+
+[node name="farm" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_04h7t")
+format = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="farm"]
+
+[node name="ColorRect" type="ColorRect" parent="farm/CanvasLayer"]
+offset_left = -4986.0
+offset_top = -3158.0
+offset_right = 4820.0
+offset_bottom = 3315.0
+color = Color(0, 0, 0, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="farm/CanvasLayer"]
+material = SubResource("CanvasItemMaterial_wsv5m")
+amount = 90
+process_material = SubResource("ParticleProcessMaterial_qsw82")
+texture = ExtResource("2_uj6vv")
+lifetime = 5.0
+randomness = 0.32

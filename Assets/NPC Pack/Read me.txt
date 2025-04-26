@@ -1,0 +1,6 @@
+File : NPC Pack
+Author : MikAnimus
+Version :
+		1.0		03/04/22		Creation
+		1.1		23/12/24		Changing outline color
+		

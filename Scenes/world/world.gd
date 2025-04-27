@@ -1,11 +1,52 @@
-extends Node2D
+extends Node
 
+@export var day_canvas: CanvasLayer
+@export var night_canvas: CanvasLayer
 
-# Called when the node enters the scene tree for the first time.
+@export var day_rect: ColorRect
+@export var night_rect: ColorRect
+
+@export var day_part: GPUParticles2D
+@export var night_part: GPUParticles2D
+
+@export var fade_duration: float = 2.0  # seconds to fully fade
+@export var cycle_interval: float = 15.0  # 15 minutes = 900 seconds
+
+var is_day = true
+
 func _ready():
-	pass # Replace with function body.
+	day_part = $farm/day/GPUParticles2D
+	night_part = $farm/night/GPUParticles2D
+	day_canvas = $farm/day
+	night_canvas = $farm/night
+	day_rect = $farm/day/dayrect
+	night_rect = $farm/night/nightrect
+	day_rect.modulate.a = 1.0
+	night_rect.modulate.a = 0.0
+	start_cycle()
 
+func start_cycle():
+	# Start with day
+	cycle()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func cycle():
+	if is_day:
+		fade(day_rect, 1.0, 0.0)  # fade out day
+		fade(night_rect, 0.0, 1.0)  # fade in night
+		day_part.visible = false
+		night_part.visible = true
+	else:
+		fade(night_rect, 1.0, 0.0)  # fade out night
+		fade(day_rect, 0.0, 1.0)    # fade in day
+		day_part.visible = true
+		night_part.visible = false
+	
+	is_day = !is_day
+	# Schedule next switch
+	await get_tree().create_timer(cycle_interval).timeout
+	cycle()
+
+func fade(rect: ColorRect, from_alpha: float, to_alpha: float):
+	var tween = create_tween()
+	rect.modulate.a = from_alpha
+	tween.tween_property(rect, "modulate:a", to_alpha, fade_duration)

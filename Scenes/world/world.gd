@@ -10,7 +10,7 @@ extends Node
 @export var night_part: GPUParticles2D
 
 @export var fade_duration: float = 2.0  # seconds to fully fade
-@export var cycle_interval: float = 15.0  # 15 minutes = 900 seconds
+@export var cycle_interval: float = 900.0  # 15 minutes = 900 seconds
 
 var is_day = true
 

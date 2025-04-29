@@ -10,17 +10,15 @@ extends Node
 @export var night_part: GPUParticles2D
 
 @export var fade_duration: float = 2.0  # seconds to fully fade
-@export var cycle_interval: float = 900.0  # 15 minutes = 900 seconds
+@export var cycle_interval: float = 15.0  # 15 minutes = 900 seconds
 
 var is_day = true
 
 func _ready():
-	day_part = $farm/day/GPUParticles2D
-	night_part = $farm/night/GPUParticles2D
-	day_canvas = $farm/day
-	night_canvas = $farm/night
-	day_rect = $farm/day/dayrect
-	night_rect = $farm/night/nightrect
+	day_part = $day/clouds
+	night_part = $night/stars
+	day_rect = $day/dayrect
+	night_rect = $night/nightrect
 	day_rect.modulate.a = 1.0
 	night_rect.modulate.a = 0.0
 	start_cycle()

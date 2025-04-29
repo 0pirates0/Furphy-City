@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://jwihihxid50o"]
+[gd_scene load_steps=17 format=3 uid="uid://jwihihxid50o"]
 
 [ext_resource type="Texture2D" uid="uid://b066tyeuofsed" path="res://Assets/Farm RPG FREE 16x16 - Tiny Asset Pack/Character/Idle.png" id="1_g8lc4"]
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_qdbdu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4rfce"]
 
@@ -112,6 +113,7 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D"]
+script = ExtResource("1_qdbdu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4rfce")

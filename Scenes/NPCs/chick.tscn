@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://csqkegiegqawy"]
+
+[ext_resource type="Texture2D" uid="uid://b8wb24ppjh2cp" path="res://Assets/Farm RPG FREE 16x16 - Tiny Asset Pack/Farm Animals/Baby Chicken Yellow.png" id="1_8b3e5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_icgtx"]
+radius = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wc5o"]
+atlas = ExtResource("1_8b3e5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lb488"]
+atlas = ExtResource("1_8b3e5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahsrf"]
+atlas = ExtResource("1_8b3e5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fauxj"]
+atlas = ExtResource("1_8b3e5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18t6a"]
+atlas = ExtResource("1_8b3e5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjemj"]
+atlas = ExtResource("1_8b3e5")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_monr4"]
+atlas = ExtResource("1_8b3e5")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w6om"]
+atlas = ExtResource("1_8b3e5")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bnye0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wc5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lb488")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahsrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fauxj")
+}],
+"loop": true,
+"name": &"walk_side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18t6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjemj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_monr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1w6om")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[node name="chick" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_icgtx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_bnye0")
+animation = &"walk_side"

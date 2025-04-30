@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmgp8a6iico6v"]
+
+[ext_resource type="Texture2D" uid="uid://jscfotatqwmn" path="res://Assets/Cute_Fantasy_Free/Animals/Pig/Pig.png" id="1_d8e3f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5alu5"]
+radius = 6.0
+height = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cr14x"]
+atlas = ExtResource("1_d8e3f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt2x1"]
+atlas = ExtResource("1_d8e3f")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fnd0"]
+atlas = ExtResource("1_d8e3f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c2fg"]
+atlas = ExtResource("1_d8e3f")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5t8u"]
+atlas = ExtResource("1_d8e3f")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l7bl"]
+atlas = ExtResource("1_d8e3f")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_anwvf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cr14x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vt2x1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fnd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c2fg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5t8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l7bl")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[node name="pig" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5alu5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+rotation = -1.5708
+sprite_frames = SubResource("SpriteFrames_anwvf")
+animation = &"idle"
+frame_progress = 0.932155

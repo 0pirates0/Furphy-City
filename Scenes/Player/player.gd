@@ -49,4 +49,4 @@ func _on_spawneractivate_2_body_exited(body):
 	var t = create_tween()
 	if body.is_in_group("player"):
 		t.tween_property($"../../spawner2", "modulate:a", 1, 1.0)
-		t.tween_property($"../../spellpart2", "mosulate:a", 0, 1.0)
+		t.tween_property($"../../spellpart2", "modulate:a", 0, 1.0)

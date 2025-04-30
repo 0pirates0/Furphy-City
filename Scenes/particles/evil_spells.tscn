@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0hghh7q1xlnm"]
+
+[ext_resource type="Texture2D" uid="uid://cic4yfu0ppinb" path="res://Assets/Texture/evil_spell_sheet.png" id="1_bqajj"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_47x6u"]
+particles_animation = true
+particles_anim_h_frames = 14
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Curve" id="Curve_qou2d"]
+min_value = -50.0
+max_value = -40.0
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_txu3a"]
+curve_y = SubResource("Curve_qou2d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xqyxl"]
+lifetime_randomness = 0.18
+particle_flag_disable_z = true
+directional_velocity_min = -164.47
+directional_velocity_max = -92.98
+directional_velocity_curve = SubResource("CurveXYZTexture_txu3a")
+gravity = Vector3(0, -40, 0)
+anim_speed_min = 0.57
+anim_speed_max = 4.09
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_47x6u")
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_xqyxl")
+texture = ExtResource("1_bqajj")
+lifetime = 2.0
+randomness = 0.25

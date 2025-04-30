@@ -6,7 +6,7 @@
 particles_animation = true
 particles_anim_h_frames = 14
 particles_anim_v_frames = 1
-particles_anim_loop = false
+particles_anim_loop = true
 
 [sub_resource type="Curve" id="Curve_cyj7p"]
 min_value = -50.0
@@ -62,3 +62,4 @@ material = SubResource("CanvasItemMaterial_mkj7e")
 amount = 40
 process_material = SubResource("ParticleProcessMaterial_4xckb")
 texture = ExtResource("1_qccne")
+randomness = 0.25

@@ -5,6 +5,11 @@ extends Node
 
 @export var day_rect: ColorRect
 @export var night_rect: ColorRect
+@onready var evilspell_part_1 = $evilspell_part1
+@onready var evilspell_part_2 = $evilspell_part2
+@onready var evilspell_part_3 = $evilspell_part3
+@onready var evilspell_part_4 = $evilspell_part4
+
 
 @export var day_part: GPUParticles2D
 @export var night_part: GPUParticles2D
@@ -33,11 +38,21 @@ func cycle():
 		fade(night_rect, 0.0, 1.0)  # fade in night
 		day_part.visible = false
 		night_part.visible = true
+		#evil spell particles
+		evilspell_part_1.visible = true
+		evilspell_part_2.visible = true
+		evilspell_part_3.visible = true
+		evilspell_part_4.visible = true
 	else:
 		fade(night_rect, 1.0, 0.0)  # fade out night
 		fade(day_rect, 0.0, 1.0)    # fade in day
 		day_part.visible = true
 		night_part.visible = false
+		#evil spell particles
+		evilspell_part_1.visible = false
+		evilspell_part_2.visible = false
+		evilspell_part_3.visible = false
+		evilspell_part_4.visible = false
 	
 	is_day = !is_day
 	# Schedule next switch

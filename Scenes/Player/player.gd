@@ -9,9 +9,6 @@ const SPEED = 300.0
 
 func _physics_process(delta):
 
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -25,3 +22,31 @@ func _physics_process(delta):
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_spawneractivate_body_entered(body):
+	var t = create_tween()
+	if body.is_in_group("player"):
+		t.tween_property($"../../spawner1", "modulate:a", 0, 1.0)
+		t.tween_property($"../../spellpart1", "modulate:a", 1, 1.0)
+
+
+func _on_spawneractivate_2_body_entered(body):
+	var t = create_tween()
+	if body.is_in_group("player"):
+		t.tween_property($"../../spawner2", "modulate:a", 0, 1.0)
+		t.tween_property($"../../spellpart2", "modulate:a", 1, 1.0)
+
+
+func _on_spawneractivate_body_exited(body):
+	var t = create_tween()
+	if body.is_in_group("player"):
+		t.tween_property($"../../spawner1", "modulate:a", 1, 1.0)
+		t.tween_property($"../../spellpart1", "modulate:a", 0, 1.0)
+
+
+func _on_spawneractivate_2_body_exited(body):
+	var t = create_tween()
+	if body.is_in_group("player"):
+		t.tween_property($"../../spawner2", "modulate:a", 1, 1.0)
+		t.tween_property($"../../spellpart2", "mosulate:a", 0, 1.0)

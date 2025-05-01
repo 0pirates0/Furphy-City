@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://csqkegiegqawy"]
+[gd_scene load_steps=13 format=3 uid="uid://csqkegiegqawy"]
 
 [ext_resource type="Texture2D" uid="uid://b8wb24ppjh2cp" path="res://Assets/Farm RPG FREE 16x16 - Tiny Asset Pack/Farm Animals/Baby Chicken Yellow.png" id="1_8b3e5"]
+[ext_resource type="Script" path="res://Scenes/NPCs/chick.gd" id="1_tvnhk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_icgtx"]
 radius = 5.0
@@ -75,6 +76,7 @@ animations = [{
 }]
 
 [node name="chick" type="CharacterBody2D"]
+script = ExtResource("1_tvnhk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_icgtx")

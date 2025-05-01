@@ -9,13 +9,14 @@ extends Node
 @onready var evilspell_part_2 = $evilspell_part2
 @onready var evilspell_part_3 = $evilspell_part3
 @onready var evilspell_part_4 = $evilspell_part4
-
+var chicks = preload("res://Scenes/NPCs/chick.tscn")
 
 @export var day_part: GPUParticles2D
 @export var night_part: GPUParticles2D
 
 @export var fade_duration: float = 2.0  # seconds to fully fade
 @export var cycle_interval: float = 15.0  # 15 minutes = 900 seconds
+@onready var marker_2d = $Marker2D
 
 var is_day = true
 
@@ -28,7 +29,12 @@ func _ready():
 	night_rect.modulate.a = 0.0
 	start_cycle()
 
+func chickspawner():
+	var chickspawn = chicks.instantiate()
+	marker_2d.add_child(chickspawn)
+
 func start_cycle():
+	chickspawner()
 	# Start with day
 	cycle()
 

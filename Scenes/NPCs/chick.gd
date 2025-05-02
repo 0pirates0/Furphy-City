@@ -25,27 +25,29 @@ func _physics_process(delta):
 		return
 	
 	var direction = (target-chick.position).normalized()
-	if abs(direction.x) > abs(direction.y):
+	if abs(direction.x) > abs(direction.y) and !is_waiting:
 		velocity = direction*SPEED
 		if direction.x < 0:
-			$AnimatedSprite2D.flip_h = true
-			animation_player.play("walk_side")
-		else:
 			$AnimatedSprite2D.flip_h = false
 			animation_player.play("walk_side")
-	else:
-		velocity = direction*SPEED
-		if direction.y < 0:
-			animation_player.play("walk_up")
 		else:
+			$AnimatedSprite2D.flip_h = true
 			animation_player.play("walk_side")
+	else:
+		if !is_waiting:
+			velocity = direction*SPEED
+			if direction.y < 0:
+				animation_player.play("walk_up")
+			else:
+				animation_player.play("walk_side")
 	
 	move_and_slide()
 	
-	if chick.position == target:
+	var dst = chick.position - target
+	if dst.length() < 5:
 		velocity = Vector2(0,0)
 		is_waiting = true
-		get_tree().create_timer(5).timeout
+		await get_tree().create_timer(5).timeout
 		new_target()
 		is_waiting = false
 

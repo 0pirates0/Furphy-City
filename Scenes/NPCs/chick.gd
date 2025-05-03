@@ -50,6 +50,10 @@ func _physics_process(delta):
 		await get_tree().create_timer(5).timeout
 		new_target()
 		is_waiting = false
+	
+	if velocity == Vector2(0,0):
+		await get_tree().create_timer(7).timeout
+		new_target()
 
 
 func new_target():

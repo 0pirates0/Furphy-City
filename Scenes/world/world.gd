@@ -16,7 +16,12 @@ var chicks = preload("res://Scenes/NPCs/chick.tscn")
 
 @export var fade_duration: float = 2.0  # seconds to fully fade
 @export var cycle_interval: float = 15.0  # 15 minutes = 900 seconds
-@onready var marker_2d = $Marker2D
+@onready var chickspawner_1 = $chickspawner1
+@onready var chickspawner_2 = $chickspawner2
+@onready var chickspawner_3 = $chickspawner3
+@onready var chickspawner_4 = $chickspawner4
+@onready var chickspawner_5 = $chickspawner5
+
 
 var is_day = true
 
@@ -30,8 +35,11 @@ func _ready():
 	start_cycle()
 
 func chickspawner():
-	var chickspawn = chicks.instantiate()
-	marker_2d.add_child(chickspawn)
+	chickspawner_2.add_child(chicks.instantiate())
+	chickspawner_1.add_child(chicks.instantiate())
+	chickspawner_3.add_child(chicks.instantiate())
+	chickspawner_4.add_child(chicks.instantiate())
+	chickspawner_5.add_child(chicks.instantiate())
 
 func start_cycle():
 	chickspawner()

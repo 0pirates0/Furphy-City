@@ -1575,6 +1575,10 @@ position = Vector2(485, 571)
 z_index = 3
 position = Vector2(1049, 495)
 
+[node name="cow_womanspawner" type="Marker2D" parent="."]
+z_index = 3
+position = Vector2(925, 200)
+
 [connection signal="body_entered" from="spawneractivate" to="farm/player" method="_on_spawneractivate_body_entered"]
 [connection signal="body_exited" from="spawneractivate" to="farm/player" method="_on_spawneractivate_body_exited"]
 [connection signal="body_entered" from="spawneractivate2" to="farm/player" method="_on_spawneractivate_2_body_entered"]

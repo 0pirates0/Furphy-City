@@ -114,8 +114,7 @@ animations = [{
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_y3p55")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(6, 1)
-rotation = 1.5708
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.999978, -6)
 sprite_frames = SubResource("SpriteFrames_ig4by")
-animation = &"walking_up"
+animation = &"walking_side"

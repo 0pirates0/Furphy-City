@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://4tpqfde2sjx5"]
+
+[ext_resource type="Script" path="res://testmaerker.gd" id="1_55meo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_310r3"]
+size = Vector2(217, 195.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(13, 61.5)
+shape = SubResource("RectangleShape2D_310r3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(311, 64)
+shape = SubResource("RectangleShape2D_310r3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(104.5, 173.75)
+shape = SubResource("RectangleShape2D_310r3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(161, -79)
+shape = SubResource("RectangleShape2D_310r3")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(162, 60)
+script = ExtResource("1_55meo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(161, 61)
+zoom = Vector2(4.75, 4.75)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 5.0
+offset_top = -7.0
+offset_right = 121.0
+offset_bottom = 126.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 205.0
+offset_top = -11.0
+offset_right = 321.0
+offset_bottom = 132.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 102.0
+offset_top = 77.0
+offset_right = 218.0
+offset_bottom = 210.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 110.0
+offset_top = -114.0
+offset_right = 226.0
+offset_bottom = 19.0
+color = Color(0.00184107, 0.00184107, 0.00184107, 1)

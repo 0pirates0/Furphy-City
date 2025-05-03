@@ -821,7 +821,7 @@ size = Vector2(23.8584, 35.294)
 radius = 26.8576
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omo2q"]
-size = Vector2(52.6873, 35.2941)
+size = Vector2(52.6873, 40.0632)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twf2k"]
 size = Vector2(17.3967, 3.81549)
@@ -1460,7 +1460,7 @@ scale = Vector2(0.999995, 0.999995)
 shape = SubResource("CircleShape2D_pd68t")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="farm/StaticBody2D"]
-position = Vector2(232.121, 260.889)
+position = Vector2(232.121, 263.273)
 scale = Vector2(0.999995, 0.999996)
 shape = SubResource("RectangleShape2D_omo2q")
 

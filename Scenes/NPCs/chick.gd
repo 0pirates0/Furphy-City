@@ -51,9 +51,10 @@ func _physics_process(delta):
 		new_target()
 		is_waiting = false
 	
-	if velocity == Vector2(0,0):
+	if int(velocity.x) == 0 and int(velocity.y)==0:
 		await get_tree().create_timer(7).timeout
-		new_target()
+		if int(velocity.x) == 0 or int(velocity.y)==0:
+			new_target()
 
 
 func new_target():

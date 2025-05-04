@@ -11,6 +11,7 @@ extends Node
 @onready var evilspell_part_4 = $evilspell_part4
 var chicks = preload("res://Scenes/NPCs/chick.tscn")
 var cow_woman = preload("res://Scenes/NPCs/cow_woman.tscn")
+var girl = preload("res://Scenes/NPCs/girl.tscn")
 
 @export var day_part: GPUParticles2D
 @export var night_part: GPUParticles2D
@@ -23,6 +24,8 @@ var cow_woman = preload("res://Scenes/NPCs/cow_woman.tscn")
 @onready var chickspawner_4 = $chickspawner4
 @onready var chickspawner_5 = $chickspawner5
 @onready var cow_womanspawner = $cow_womanspawner
+@onready var girlspawner = $girlspawner
+
 
 
 
@@ -36,6 +39,7 @@ func _ready():
 	day_rect.modulate.a = 1.0
 	night_rect.modulate.a = 0.0
 	cow_womanspawner.add_child(cow_woman.instantiate())
+	girlspawner.add_child(girl.instantiate())
 	start_cycle()
 
 func chickspawner():

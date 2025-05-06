@@ -29,14 +29,11 @@ func _physics_process(delta):
 	
 	var dst = target-soldier.position
 	if dst.length() < 1:
-		print(dst.length())
 		is_waiting = true
 		animation_player.play("idle")
-		print(soldier.position)
 		await get_tree().create_timer(3).timeout
 		new_target()
 		is_waiting = false
-		print(target)
 
 	move_and_slide()
 

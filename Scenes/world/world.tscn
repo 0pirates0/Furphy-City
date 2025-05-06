@@ -1587,6 +1587,10 @@ position = Vector2(250, 463)
 z_index = 3
 position = Vector2(1125, -300)
 
+[node name="soldierspawner" type="Marker2D" parent="."]
+z_index = 3
+position = Vector2(1050, -287.5)
+
 [connection signal="body_entered" from="spawneractivate" to="farm/player" method="_on_spawneractivate_body_entered"]
 [connection signal="body_exited" from="spawneractivate" to="farm/player" method="_on_spawneractivate_body_exited"]
 [connection signal="body_entered" from="spawneractivate2" to="farm/player" method="_on_spawneractivate_2_body_entered"]

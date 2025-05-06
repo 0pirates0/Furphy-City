@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://cqk60lohlcpfj"]
+[gd_scene load_steps=23 format=3 uid="uid://cqk60lohlcpfj"]
 
+[ext_resource type="Script" path="res://Scenes/NPCs/soldier.gd" id="1_2xflk"]
 [ext_resource type="Texture2D" uid="uid://cxqorms6qp3yk" path="res://Assets/NPC Pack/Soldier/Soldier Walk-Sheet.png" id="1_jfjhh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jte02"]
@@ -225,6 +226,8 @@ _data = {
 }
 
 [node name="soldier" type="CharacterBody2D"]
+z_index = 3
+script = ExtResource("1_2xflk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_jte02")

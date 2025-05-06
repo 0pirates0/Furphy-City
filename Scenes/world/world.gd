@@ -13,6 +13,7 @@ var chicks = preload("res://Scenes/NPCs/chick.tscn")
 var cow_woman = preload("res://Scenes/NPCs/cow_woman.tscn")
 var girl = preload("res://Scenes/NPCs/girl.tscn")
 var oldman =  preload("res://Scenes/NPCs/oldman.tscn")
+var soldier = preload("res://Scenes/NPCs/soldier.tscn")
 
 @export var day_part: GPUParticles2D
 @export var night_part: GPUParticles2D
@@ -27,6 +28,7 @@ var oldman =  preload("res://Scenes/NPCs/oldman.tscn")
 @onready var cow_womanspawner = $cow_womanspawner
 @onready var girlspawner = $girlspawner
 @onready var oldmanspawner = $oldmanspawner
+@onready var soldierspawner = $soldierspawner
 
 
 
@@ -42,6 +44,7 @@ func _ready():
 	cow_womanspawner.add_child(cow_woman.instantiate())
 	girlspawner.add_child(girl.instantiate())
 	oldmanspawner.add_child(oldman.instantiate())
+	soldierspawner.add_child(soldier.instantiate())
 	start_cycle()
 
 func chickspawner():

@@ -1,10 +1,8 @@
 extends CharacterBody2D
-
-
-const SPEED = 300.0
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-#var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+const SPEED = 150.0
+@onready var animation_player = $AnimationPlayer
+@onready var bodyani = $bodyani
+@onready var hairani = $hairani
 
 
 func _physics_process(delta):
@@ -20,6 +18,17 @@ func _physics_process(delta):
 		velocity.y = directiony * SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
+	
+	if velocity == Vector2(0,0):
+		animation_player.play("idle")
+	else:
+		animation_player.play("walk")
+		if direction == 1:
+			bodyani.flip_h = false
+			hairani.flip_h = false
+		elif direction == -1:
+			bodyani.flip_h = true
+			hairani.flip_h = true
 
 	move_and_slide()
 

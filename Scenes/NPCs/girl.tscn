@@ -10,13 +10,13 @@ radius = 7.0
 atlas = ExtResource("1_7e1rx")
 region = Rect2(0, 128, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_16jov"]
-atlas = ExtResource("1_7e1rx")
-region = Rect2(32, 128, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ai83"]
 atlas = ExtResource("1_7e1rx")
 region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16jov"]
+atlas = ExtResource("1_7e1rx")
+region = Rect2(32, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6gfdm"]
 atlas = ExtResource("1_7e1rx")
@@ -125,10 +125,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_4lewn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_16jov")
+"texture": SubResource("AtlasTexture_0ai83")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0ai83")
+"texture": SubResource("AtlasTexture_16jov")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6gfdm")
@@ -422,7 +422,6 @@ shape = SubResource("CapsuleShape2D_wiphk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2g8uu")
 animation = &"walk_right"
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

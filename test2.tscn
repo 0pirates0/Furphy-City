@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://8ec4xa37blrw"]
+
+[ext_resource type="PackedScene" uid="uid://jwihihxid50o" path="res://Scenes/Player/player.tscn" id="1_lxy45"]
+[ext_resource type="PackedScene" uid="uid://cv7dablmeh0fp" path="res://Scenes/Enemies/greenslime.tscn" id="2_mvh8o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_facsu"]
+size = Vector2(67, 309)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1lvu"]
+size = Vector2(340, 36.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5kt5"]
+size = Vector2(67, 289)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(23.5, 144.5)
+shape = SubResource("RectangleShape2D_facsu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(193, 19.75)
+shape = SubResource("RectangleShape2D_f1lvu")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(193, 292)
+shape = SubResource("RectangleShape2D_f1lvu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(365, 144)
+shape = SubResource("RectangleShape2D_y5kt5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_top = -5.0
+offset_right = 57.0
+offset_bottom = 294.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+offset_left = 333.0
+offset_top = -2.0
+offset_right = 388.0
+offset_bottom = 297.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer"]
+offset_left = 37.0
+offset_top = 275.0
+offset_right = 360.0
+offset_bottom = 318.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer"]
+offset_left = 44.0
+offset_top = -6.0
+offset_right = 367.0
+offset_bottom = 37.0
+color = Color(0, 0, 0, 1)
+
+[node name="player" parent="." instance=ExtResource("1_lxy45")]
+position = Vector2(100, 93)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_mvh8o")]
+position = Vector2(270, 191)
